@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="estilos/style.css">
-    <script src="scripts/script.js defer"></script>
+    <script src="scripts/script.js" defer></script>
     <title>Jogo da Forca</title>
 </head>
 <body>
@@ -19,6 +19,9 @@
                     <div class="coluna"></div>
                     <div class="perna_esq"></div>
                     <div class="perna_dir"></div>
+                    <div class="botaoComeçar">
+                        <button class= "btnComecar">Começar</button>
+                    </div>
                 </div>      
             </div>
             <div class="palavras">
@@ -29,15 +32,46 @@
                     <div class="letra"><input type="text" name="txtL1" id="txtL3"></div>
                     <div class="letra"><input type="text" name="txtL1" id="txtL4"></div>
                     <div class="letra"><input type="text" name="txtL1" id="txtL5"></div>
+                    <div class="letra"><input type="text" name="txtL1" id="txtL6"></div>
+                    <div class="letra"><input type="text" name="txtL1" id="txtL7"></div>
+                    <div class="letra"><input type="text" name="txtL1" id="txtL8"></div>
+                    <div class="letra"><input type="text" name="txtL1" id="txtL9"></div>
                 </div>
-                <div class="dicas"><p>Dica:</p> <p id="dica">Animal</p></div>
-                <div class="letrasEscolhidas"><p>Letras: </p><p id="letrasEscolhidas">A</p></div>
+                <div class="dicas"><p>Dica:</p> <p id="dica">Animal</p> <p id="palavraSecreta">Palavra</p> <p id="qtdeLetra">Qtde</p></div>
+                
+                <div class="letrasEscolhidas"><p>Letras: </p><p id="letrasEscolhidas"></p></div>
             </div>
         </div>
 
         <div class="letras-mensagem">
             <div class="todasLetras">
-                <button value="A">A</button>
+                <button class= "btnLetra" value="A">A</button>
+                <button class= "btnLetra" value="B">B</button>
+                <button class= "btnLetra" value="C">C</button>
+                <button class= "btnLetra" value="Ç">Ç</button>
+                <button class= "btnLetra" value="D">D</button>
+                <button class= "btnLetra" value="E">E</button>
+                <button class= "btnLetra" value="F">F</button>
+                <button class= "btnLetra" value="G">G</button>
+                <button class= "btnLetra" value="H">H</button>
+                <button class= "btnLetra" value="I">I</button>
+                <button class= "btnLetra" value="J">J</button>
+                <button class= "btnLetra" value="K">K</button>
+                <button class= "btnLetra" value="L">L</button>
+                <button class= "btnLetra" value="M">M</button>
+                <button class= "btnLetra" value="N">N</button>
+                <button class= "btnLetra" value="O">O</button>
+                <button class= "btnLetra" value="P">P</button>
+                <button class= "btnLetra" value="Q">Q</button>
+                <button class= "btnLetra" value="R">R</button>
+                <button class= "btnLetra" value="S">S</button>
+                <button class= "btnLetra" value="T">T</button>
+                <button class= "btnLetra" value="U">U</button>
+                <button class= "btnLetra" value="V">V</button>
+                <button class= "btnLetra" value="X">X</button>
+                <button class= "btnLetra" value="W">W</button>
+                <button class= "btnLetra" value="Y">Y</button>
+                <button class= "btnLetra" value="Z">Z</button>
             </div>
             <div class="msg">Mensagem...</div>
         </div>

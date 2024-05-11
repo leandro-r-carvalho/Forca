@@ -125,6 +125,25 @@
     transform: rotate(135deg);
 }
 
+.boneco .btnComecar {
+    position: relative;
+    top: -105px;
+    left: -30px;
+    height: 35px;
+    width: 150px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    background-color: #000;
+    color: #fff;
+    cursor: pointer;
+}
+
+.boneco .btnComecar:hover {
+    background-color: dimgray;
+    color: #fff;
+    cursor: pointer;
+}
+
 /*Configurações dentro da div .palavras */
 .palavras h2 {
     text-align: center;
@@ -135,9 +154,8 @@
     margin: auto;
     width: 400px;
     height: 50px;
-    border: solid 1px #000;
     display: flex;
-    justify-content: space-around;
+    justify-content:space-evenly;
     align-items: center;
 }
 
@@ -151,12 +169,15 @@
     height: 35px;
 }
 
+#txtL6, #txtL7, #txtL8, #txtL9 {
+    display: none;
+}
+
 .dicas {
     margin: auto;
     margin-top: 5px;
     width: 400px;
     height: 50px;
-    border: solid 1px #000;
     display: flex;
     justify-content:flex-start;
     align-items: center;
@@ -170,6 +191,18 @@
 .dicas p#dica {
     padding: 5px;
     font-weight: normal;
+}
+
+.dicas p#palavraSecreta {
+    padding: 5px;
+    font-weight: normal;
+    color: red;
+}
+
+.dicas p#qtdeLetra {
+    padding: 5px;
+    font-weight: normal;
+    color: blue;
 }
 
 .letrasEscolhidas {
@@ -196,13 +229,12 @@
 /*Configurações dentro da div .letras-mensagem */
 .todasLetras {
     margin: auto;
-    margin-top: 10px;
+    margin-top: 20px;
     width: 700px;
     height: 150px;
-    border: solid 1px #000;
-    display: flex;
-    justify-content:space-around;
-    align-items: center;
+    display: grid;
+    grid-template-columns: repeat(9, 1fr);
+    justify-items: center;  
 }
 
 .todasLetras button {
