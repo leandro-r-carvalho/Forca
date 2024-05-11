@@ -1,0 +1,224 @@
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+.container {
+    width: 100vw;
+    height: 600px;
+}
+
+.forca-palavras, .letras-mensagem { 
+    margin: auto;
+    margin-top: 7px;
+    width: 900px;
+    height: 48%;
+    border: solid 1px #000;
+}
+
+.forca-palavras {
+    display: flex;
+    flex-direction: row;
+}
+
+/*Configurações dentro da div .forca-palavras */
+.forca {
+    margin-top: 3px;
+    margin-left: 3px;
+    width: 30%;
+    height: 280px;
+    border: solid 1px #000;
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+}
+
+.palavras {
+    margin-top: 3px;
+    margin-right: 3px;
+    margin-left: 3px;
+    width: 70%;
+    height: 280px;
+    border: solid 1px #000;
+}
+
+/*Configurações dentro da div .boneco*/
+.boneco {
+    margin: auto;
+    width: 100px;
+    height: 220px;
+}
+
+.boneco .cabeca {
+    margin: auto;
+    margin-top: 20px;
+    border: solid 3px #000;
+    height: 35px;
+    width: 35px;
+    border-radius: 50%;
+}
+
+.boneco .pescoco {
+    margin: auto;
+    border: solid 1px #000;
+    height: 30px;
+    width: 1px;
+    background-color: #000;
+}
+
+.boneco .braco_esq {
+    position: relative;
+    top: -5px;
+    left: -13px;
+    margin: auto;
+    border: solid 1px #000;
+    height: 35px;
+    width: 2px;
+    background-color: #000;
+    transform: rotate(45deg);
+
+}
+
+.boneco .braco_dir {
+    position: relative;
+    top: -42px;
+    left: 13px;
+    margin: auto;
+    border: solid 1px #000;
+    height: 35px;
+    width: 2px;
+    background-color: #000;
+    transform: rotate(135deg);
+}
+
+.boneco .coluna {
+    position: relative;
+    top: -70px;
+    margin: auto;
+    border: solid 1px #000;
+    height: 70px;
+    width: 2px;
+    background-color: #000;
+}
+
+.boneco .perna_esq {
+    position: relative;
+    top: -76px;
+    left: -13px;
+    margin: auto;
+    border: solid 1px #000;
+    height: 35px;
+    width: 2px;
+    background-color: #000;
+    transform: rotate(45deg);
+}
+
+.boneco .perna_dir {
+    position: relative;
+    top: -113px;
+    left: 13px;
+    margin: auto;
+    border: solid 1px #000;
+    height: 35px;
+    width: 2px;
+    background-color: #000;
+    transform: rotate(135deg);
+}
+
+/*Configurações dentro da div .palavras */
+.palavras h2 {
+    text-align: center;
+    padding: 5px;
+}
+
+.letras {
+    margin: auto;
+    width: 400px;
+    height: 50px;
+    border: solid 1px #000;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.letra {
+    width: 40px;
+    height: 40px;
+}
+
+.letra input {
+    width: 35px;
+    height: 35px;
+}
+
+.dicas {
+    margin: auto;
+    margin-top: 5px;
+    width: 400px;
+    height: 50px;
+    border: solid 1px #000;
+    display: flex;
+    justify-content:flex-start;
+    align-items: center;
+}
+
+.dicas p {
+    padding: 5px;
+    font-weight: bold;
+}
+
+.dicas p#dica {
+    padding: 5px;
+    font-weight: normal;
+}
+
+.letrasEscolhidas {
+    margin: auto;
+    margin-top: 10px;
+    width: 600px;
+    height: 100px;
+    border: solid 1px #000;
+    display: flex;
+    justify-content:flex-start;
+    align-items: center;
+}
+
+.letrasEscolhidas p {
+    padding: 5px;
+    font-weight: bold;
+}
+
+.letrasEscolhidas p#letrasEscolhidas {
+    padding: 5px;
+    font-weight: normal;
+}
+
+/*Configurações dentro da div .letras-mensagem */
+.todasLetras {
+    margin: auto;
+    margin-top: 10px;
+    width: 700px;
+    height: 150px;
+    border: solid 1px #000;
+    display: flex;
+    justify-content:space-around;
+    align-items: center;
+}
+
+.todasLetras button {
+    width: 40px;
+    height: 40px;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.msg {
+    margin: auto;
+    margin-top: 10px;
+    padding: 5px;
+    width: 500px;
+    height: 50px;
+    border: solid 1px #000;
+    font-size: 20px;
+    color: red;
+}

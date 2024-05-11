@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="estilos/style.css">
+    <script src="scripts/script.js defer"></script>
+    <title>Jogo da Forca</title>
+</head>
+<body>
+    <div class="container">
+        <div class="forca-palavras">
+            <div class="forca">
+                <div class="boneco">
+                    <div class="cabeca"></div>
+                    <div class="pescoco"></div>
+                    <div class="braco_esq"></div>
+                    <div class="braco_dir"></div>
+                    <div class="coluna"></div>
+                    <div class="perna_esq"></div>
+                    <div class="perna_dir"></div>
+                </div>      
+            </div>
+            <div class="palavras">
+                <h2>Descubra a palavra</h2>
+                <div class="letras">
+                    <div class="letra"><input type="text" name="txtL1" id="txtL1"></div>
+                    <div class="letra"><input type="text" name="txtL1" id="txtL2"></div>
+                    <div class="letra"><input type="text" name="txtL1" id="txtL3"></div>
+                    <div class="letra"><input type="text" name="txtL1" id="txtL4"></div>
+                    <div class="letra"><input type="text" name="txtL1" id="txtL5"></div>
+                </div>
+                <div class="dicas"><p>Dica:</p> <p id="dica">Animal</p></div>
+                <div class="letrasEscolhidas"><p>Letras: </p><p id="letrasEscolhidas">A</p></div>
+            </div>
+        </div>
+
+        <div class="letras-mensagem">
+            <div class="todasLetras">
+                <button value="A">A</button>
+            </div>
+            <div class="msg">Mensagem...</div>
+        </div>
+    </div>
+</body>
+</html>
