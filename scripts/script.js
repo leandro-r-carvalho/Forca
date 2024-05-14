@@ -66,18 +66,109 @@ let letraAtual = "";
 //Função para colocar a letra nas letras utilizadas
 function insereLetra(evento) {
     letraAtual = evento.target.textContent;
-    //possuiLetra(letraAtual);
-    letraEscolhida.innerHTML = `${letraEscolhida.innerHTML} - ${evento.target.textContent}`;
-    //Manda para a variavel a letra escolhida
+    if (possuiLetra(letraAtual) != "") {
+        var posLetra = possuiLetra(letraAtual);
+        preencheLetraInput(letraAtual, posLetra);
+        verificarVencedor(palavra.textContent, palavra.textContent.length);
+    } else {
+        letraEscolhida.innerHTML = `${letraEscolhida.innerHTML} - ${evento.target.textContent}`;
+    }
     
 }
 
 botoesLetras.forEach((botao) => botao.addEventListener("click", insereLetra));
 
+var temLetra = "";
 //Função para saber se tem a letra na palavra e indicar a posição
-
 function possuiLetra(letra) {
-    if (palavraSecreta) {
+    temLetra = "";
+    for (let i=0; i < palavra.textContent.length; i++) {
+        if (letra == palavra.textContent[i]){ 
+           temLetra = temLetra + i; 
+        }
+    }
+    return temLetra;
+}
 
+/* Variaveis das divs */
+const cx1 = document.querySelector("#txtL1");
+const cx2 = document.querySelector("#txtL2");
+const cx3 = document.querySelector("#txtL3");
+const cx4 = document.querySelector("#txtL4");
+const cx5 = document.querySelector("#txtL5");
+
+function preencheLetraInput(letra, pos) {
+    posicaoLetra= pos.split("");
+    for (let i=0; i < posicaoLetra.length; i++){
+        switch (posicaoLetra[i]) {
+            case "0":
+                cx1.value = letra;
+                break;
+            case "1":
+                cx2.value = letra;
+                break;
+            case "2":
+                cx3.value = letra;
+                break;
+            case "3":
+                cx4.value = letra;
+                break;
+            case "4":
+                cx5.value = letra;
+                break;
+            case "5":
+                cx6.value = letra;
+                break;
+            case "6":
+                cx7.value = letra;
+                break;
+            case "7":
+                cx8.value = letra;
+                break;
+            case "8":
+                cx8.value = letra;
+                break;
+            default:
+                alert("Erro...")
+        }
+    }
+}
+
+const msg = document.querySelector(".msg");
+function verificarVencedor(palavra, qtde){
+    for (let i=0; i < qtde; i++){
+        switch (Number(qtde)) {
+            case 5:
+                if(cx1.value !="" && cx2.value !="" && cx3.value !="" && cx4.value !="" && cx5.value !=""){    
+                    msg.innerHTML = `Parabéns!!! Você acertou a palavra ${palavra}`;
+                }
+                break;
+            case 6:
+                if(cx1.value !="" && cx2.value !="" && cx3.value !="" && cx4.value !=""
+                && cx5.value !="" && cx6.value !=""){
+                    msg.innerHTML = `Parabéns!!! Você acertou a palavra ${palavra}`;
+                }
+                break;
+            case 7:
+                if(cx1.value !="" && cx2.value !="" && cx3.value !="" && cx4.value !=""
+                && cx5.value !="" && cx6.value !="" && cx7.value !=""){
+                    msg.innerHTML = `Parabéns!!! Você acertou a palavra ${palavra}`;
+                }
+                break;
+            case 8:
+                if(cx1.value !="" && cx2.value !="" && cx3.value !="" && cx4.value !=""
+                && cx5.value !="" && cx6.value !="" && cx7.value !="" && cx8.value !=""){
+                    msg.innerHTML = `Parabéns!!! Você acertou a palavra ${palavra}`;
+                }
+                break;
+            case 9:
+                if(cx1.value !="" && cx2.value !="" && cx3.value !="" && cx4.value !=""
+                && cx5.value !="" && cx6.value !="" && cx7.value !="" && cx8.value !="" && cx9.value !=""){
+                    msg.innerHTML = `Parabéns!!! Você acertou a palavra ${palavra}`;
+                }
+                break;
+            default:
+                alert("Erro...")
+        }
     }
 }
