@@ -5,7 +5,7 @@ const dicaPalavra = ["Instrumento Musical", "Animal", "Objeto", "Livro", "Cor"];
 //Pegar a quantidade de letra da palavra escolhida, minimo 5.
 let qtdeLetra = 5;
 
-const btnComecar = document.querySelector(".btnComecar")
+const btnComecar = document.querySelector(".btnComecar");
 const dica = document.getElementById("dica");
 const palavra = document.getElementById("palavraSecreta");
 const quantidadeLetra = document.getElementById("qtdeLetra");
@@ -172,3 +172,25 @@ function verificarVencedor(palavra, qtde){
         }
     }
 }
+
+//Configurando o botão jogar novamente
+const btnNovoJogo = document.querySelector(".btnNovoJogo");
+
+function novoJogo(){
+    //Limpar todas as inputs
+    cx1.value ="";
+    cx2.value ="";
+    cx3.value ="";
+    cx4.value ="";
+    cx5.value ="";
+    cx6.value ="";
+    cx7.value ="";
+    cx8.value =""; 
+    cx9.value ="";
+    //Limpar todas as mensagens
+    msg.innerHTML = "";
+    //chamar função do botão "Começar"
+    escolhaPalavra();
+}
+
+btnNovoJogo.addEventListener("click", novoJogo);
