@@ -8,10 +8,12 @@ let qtdeLetra = 5;
 const btnComecar = document.querySelector(".btnComecar");
 const dica = document.getElementById("dica");
 const palavra = document.getElementById("palavraSecreta");
+const divPalavra = document.querySelector(".palavras");
 const quantidadeLetra = document.getElementById("qtdeLetra");
 
 //Função para escolher a palavra
 function escolhaPalavra() {
+    divPalavra.style.display = "block";
     //Gerar um numero randomico pelo indice da palavra
     const index = Math.floor(Math.random() * 4);
     dica.innerHTML = dicaPalavra[index];
@@ -59,10 +61,19 @@ function criarInputs(num) {
     }
 }
 
+//Pegando as divs do boneco
+bonecoCabeca = document.querySelector(".cabeca");
+bonecoPescoco = document.querySelector(".pescoco");
+bonecoBracoEsq = document.querySelector(".braco_esq");
+bonecoBracoDir = document.querySelector(".braco_dir");
+bonecoColuna = document.querySelector(".coluna");
+bonecoPernaEsq = document.querySelector(".perna_esq");
+bonecoPernaDir = document.querySelector(".perna_dir");
+
 const botoesLetras = document.querySelectorAll(".btnLetra");
 const letraEscolhida = document.getElementById("letrasEscolhidas");
 let letraAtual = "";
-
+let qtdeErros = 7;
 //Função para colocar a letra nas letras utilizadas
 function insereLetra(evento) {
     letraAtual = evento.target.textContent;
@@ -72,6 +83,57 @@ function insereLetra(evento) {
         verificarVencedor(palavra.textContent, palavra.textContent.length);
     } else {
         letraEscolhida.innerHTML = `${letraEscolhida.innerHTML} - ${evento.target.textContent}`;
+        if (qtdeErros > 0){
+            msg.innerHTML = `Você errou! Possui mais ${qtdeErros} tentativas`
+            switch (qtdeErros){
+                case 1:
+                    bonecoCabeca.style.display = "block";
+                    bonecoPescoco.style.display = "block";
+                    bonecoBracoEsq.style.display = "block";
+                    bonecoBracoDir.style.display = "block";
+                    bonecoColuna.style.display = "block";
+                    bonecoPernaEsq.style.display = "block";
+                    bonecoPernaDir.style.display = "block";
+                    break;
+                case 2:
+                    bonecoCabeca.style.display = "block";
+                    bonecoPescoco.style.display = "block";
+                    bonecoBracoEsq.style.display = "block";
+                    bonecoBracoDir.style.display = "block";
+                    bonecoColuna.style.display = "block";
+                    bonecoPernaEsq.style.display = "block";
+                    break;
+                case 3:
+                    bonecoCabeca.style.display = "block";
+                    bonecoPescoco.style.display = "block";
+                    bonecoBracoEsq.style.display = "block";
+                    bonecoBracoDir.style.display = "block";
+                    bonecoColuna.style.display = "block";
+                    break;
+                case 4:
+                    bonecoCabeca.style.display = "block";
+                    bonecoPescoco.style.display = "block";
+                    bonecoBracoEsq.style.display = "block";
+                    bonecoBracoDir.style.display = "block";
+                    break;
+                case 5:
+                    bonecoCabeca.style.display = "block";
+                    bonecoPescoco.style.display = "block";
+                    bonecoBracoEsq.style.display = "block";
+                    break;
+                case 6:
+                    bonecoCabeca.style.display = "block";
+                    bonecoPescoco.style.display = "block";
+                    break;
+                case 7:
+                    bonecoCabeca.style.display = "block";
+                    break;
+            }
+        } else { 
+            msg.innerHTML = `Você perdeu! Recomece o jogo e tente novamente, a palavra correta era ${palavra.textContent}`
+            botoesLetras.forEach((botao) => botao.disabled = true);
+        } 
+        qtdeErros--;
     }
     
 }
@@ -126,7 +188,7 @@ function preencheLetraInput(letra, pos) {
                 cx8.value = letra;
                 break;
             case "8":
-                cx8.value = letra;
+                cx9.value = letra;
                 break;
             default:
                 alert("Erro...")
@@ -188,7 +250,21 @@ function novoJogo(){
     cx8.value =""; 
     cx9.value ="";
     //Limpar todas as mensagens
+    dica.innerHTML = "";
+    letraEscolhida.innerHTML = "";
     msg.innerHTML = "";
+    //Limpar variavel de erros
+    qtdeErros = 7;
+    //Habilita novamente os botões
+    botoesLetras.forEach((botao) => botao.disabled = false);
+    //Deixar as divs do boneco invisiveis
+    bonecoCabeca.style.display = "none";
+    bonecoPescoco.style.display = "none";
+    bonecoBracoEsq.style.display = "none";
+    bonecoBracoDir.style.display = "none";
+    bonecoColuna.style.display = "none";
+    bonecoPernaEsq.style.display = "none";
+    bonecoPernaDir.style.display = "none";
     //chamar função do botão "Começar"
     escolhaPalavra();
 }
